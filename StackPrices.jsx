@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 const STOCKS = {
@@ -33,7 +34,7 @@ function StackPrices() {
         try {
           const response = await fetch(`https://api.marketdata.app/v1/stocks/quotes/${symbol}/`);
           const data = await response.json();
-          results[company] = data.last ?? "N/A"; // last price
+          results[company] = data.last ?? "N/A"; 
         } catch (error) {
           results[company] = "Error";
         }
@@ -46,7 +47,7 @@ function StackPrices() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>📈 Real-time Stock Prices (Public API)</h2>
+      <h2>Real-time Stock Prices (Public API)</h2>
       <table border="1" cellPadding="8" cellSpacing="0">
         <thead style={{ backgroundColor: "#444", color: "white" }}>
           <tr>
